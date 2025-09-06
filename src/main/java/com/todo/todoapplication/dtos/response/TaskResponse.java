@@ -11,5 +11,5 @@ public class TaskResponse {
     private String title;
     private String description;
     private boolean completed;
-    private DateTimeFormatter createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 }

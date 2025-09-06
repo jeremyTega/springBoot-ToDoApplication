@@ -4,6 +4,8 @@ import com.todo.todoapplication.data.models.Task;
 import com.todo.todoapplication.dtos.requests.TaskRequest;
 import com.todo.todoapplication.dtos.response.TaskResponse;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Mapper {
@@ -22,7 +24,7 @@ public class Mapper {
         taskResponse.setTitle(task.getTitle());
         taskResponse.setDescription(task.getDescription());
         taskResponse.setCompleted(task.isCompleted());
-        taskResponse.setCreatedAt(DateTimeFormatter.ofPattern("EEE, dd MM, yyyy, hh:mm:ss a"));
+        taskResponse.setCreatedAt(LocalDateTime.now());
         return taskResponse;
     }
 }
