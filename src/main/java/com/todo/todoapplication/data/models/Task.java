@@ -2,6 +2,7 @@ package com.todo.todoapplication.data.models;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -13,7 +14,10 @@ public class Task {
     private String id;
     private String title;
     private String description;
-    private boolean completed;
+    private boolean completed = false;
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    @DBRef
+    private User owner;
 
 }

@@ -3,21 +3,16 @@ package com.todo.todoapplication.controllers;
 import com.todo.todoapplication.dtos.requests.TaskRequest;
 import com.todo.todoapplication.dtos.response.TaskResponse;
 import com.todo.todoapplication.services.TaskService;
-import com.todo.todoapplication.utils.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/v1")
 public class TaskController {
 
+        @Autowired
         private TaskService taskService;
 
-        @Autowired
-        public void setTaskService(TaskService taskService) {
-            this.taskService = taskService;
-        }
 
         @PostMapping("/create")
         public TaskResponse createTask(@RequestBody TaskRequest taskRequest) {

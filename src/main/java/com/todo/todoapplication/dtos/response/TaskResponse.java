@@ -12,4 +12,5 @@ public class TaskResponse {
     private String description;
     private boolean completed;
     private LocalDateTime createdAt = LocalDateTime.now();
+    private String owner;
 }
