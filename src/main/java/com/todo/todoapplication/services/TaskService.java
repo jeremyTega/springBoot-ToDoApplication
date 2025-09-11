@@ -9,9 +9,9 @@ import java.util.List;
 public interface TaskService {
      TaskResponse createTask(TaskRequest taskRequest, User owner);
      List<TaskResponse> getAllTaskForUser  (User user);
-     TaskResponse markTaskAsCompleted(String id, User userId);
-//     TaskResponse updateTask(TaskRequest taskRequest);
-//     void deleteTask(String id);
+     TaskResponse markTaskAsCompleted(String id, String userId);
+     TaskResponse updateTask(String taskId, TaskRequest taskRequest, User owner);
+     void deleteTask(String id, User owner);
 
 
 }
