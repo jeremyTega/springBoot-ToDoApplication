@@ -1,17 +1,22 @@
 package com.todo.todoapplication.utils;
 
 import com.todo.todoapplication.data.models.Task;
+import com.todo.todoapplication.data.models.User;
 import com.todo.todoapplication.dtos.requests.TaskRequest;
 import com.todo.todoapplication.dtos.response.TaskResponse;
 
 import java.time.LocalDateTime;
 
 public class TaskMapper {
-    public static Task convertToTask(TaskRequest tasks) {
+    public static Task convertToTask(TaskRequest tasks, User owner) {
         Task task = new Task();
         task.setTitle(tasks.getTitle());
         task.setDescription(tasks.getDescription());
-//        task.setCompleted(tasks.isCompleted());
+        task.setOwner(owner);
+        if(task.getDueDateTime()!=null) {
+            task.setDueDateTime(tasks.getDueDateTime());
+        }
+//      task.setCompleted(tasks.isCompleted());
         return task;
 
     }

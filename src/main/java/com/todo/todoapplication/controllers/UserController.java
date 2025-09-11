@@ -1,6 +1,8 @@
 package com.todo.todoapplication.controllers;
 
+import com.todo.todoapplication.dtos.requests.UserLoginRequest;
 import com.todo.todoapplication.dtos.requests.UserRegistrationRequest;
+import com.todo.todoapplication.dtos.response.AuthResponse;
 import com.todo.todoapplication.dtos.response.UserResponse;
 import com.todo.todoapplication.services.UserService;
 import jakarta.validation.Valid;
@@ -17,9 +19,20 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    private AuthResponse authResponse;
+
+
     @PostMapping("/register")
     public UserResponse register(@Valid @RequestBody UserRegistrationRequest request)
     {
         return userService.register(request);
     }
-}
+
+    @PostMapping("login")
+    public AuthResponse login(@Valid @RequestBody UserLoginRequest request)
+    {
+       return userService.login(request);
+    }
+
+
+  }

@@ -16,6 +16,8 @@ public class Task {
     private String description;
     private boolean completed = false;
     private LocalDateTime createdAt = LocalDateTime.now();
+    private LocalDateTime dueDateTime;
+    private LocalDateTime completedAt;
 
     @DBRef
     private User owner;
