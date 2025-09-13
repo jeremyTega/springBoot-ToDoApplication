@@ -13,7 +13,7 @@ public class TaskMapper {
         task.setTitle(tasks.getTitle());
         task.setDescription(tasks.getDescription());
         task.setOwner(owner);
-        if(task.getDueDateTime()!=null) {
+        if(tasks.getDueDateTime()!=null) {
             task.setDueDateTime(tasks.getDueDateTime());
         }
 //      task.setCompleted(tasks.isCompleted());
@@ -26,6 +26,7 @@ public class TaskMapper {
         taskResponse.setId(task.getId());
         taskResponse.setTitle(task.getTitle());
         taskResponse.setDescription(task.getDescription());
+        taskResponse.setDueDateTime(task.getDueDateTime());
         taskResponse.setCompleted(task.isCompleted());
         taskResponse.setCreatedAt(LocalDateTime.now());
         if(task.getOwner() != null){

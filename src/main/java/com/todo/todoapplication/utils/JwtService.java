@@ -1,4 +1,4 @@
-package com.todo.todoapplication.services;
+package com.todo.todoapplication.utils;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import io.jsonwebtoken.Jwts;

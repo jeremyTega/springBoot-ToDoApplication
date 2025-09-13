@@ -6,6 +6,7 @@ import com.todo.todoapplication.dtos.requests.UserLoginRequest;
 import com.todo.todoapplication.dtos.requests.UserRegistrationRequest;
 import com.todo.todoapplication.dtos.response.AuthResponse;
 import com.todo.todoapplication.dtos.response.UserResponse;
+import com.todo.todoapplication.utils.JwtService;
 import com.todo.todoapplication.utils.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class UserServiceImp implements UserService {
 
     private User findExistingUser(String email){
         return userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User  with this " + email + "not found"));
+                .orElseThrow(() -> new RuntimeException("User  with this " + email + " not found"));
     }
 
 

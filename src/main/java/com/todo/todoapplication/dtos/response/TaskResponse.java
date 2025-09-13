@@ -10,6 +10,7 @@ public class TaskResponse {
     private String id;
     private String title;
     private String description;
+    private LocalDateTime DueDateTime;
     private boolean completed;
     private LocalDateTime createdAt = LocalDateTime.now();
     private String owner;
